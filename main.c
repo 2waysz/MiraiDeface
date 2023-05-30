@@ -25,7 +25,7 @@
 int len(char text[])
 {
 
-    long unsigned int i;
+    int i;
 
     for (i = 0; text[i] != '\0'; i++)
         ;
