@@ -22,7 +22,7 @@
 
 #define SA struct sockaddr
 
-long unsigned int len(char text[])
+int len(char text[])
 {
 
     long unsigned int i;
