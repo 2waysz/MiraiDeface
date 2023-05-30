@@ -6,3 +6,5 @@ Henti Mirai Defacer
         
         - How To Run? (gcc main.c -o Henti -Wextra)
             (./Henti C2IP C2Port)
+
+       - Video (https://gyazo.com/5ad20429ce996b5be8bb4f319e6d3811)
